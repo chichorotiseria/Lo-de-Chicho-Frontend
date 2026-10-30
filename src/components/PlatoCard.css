@@ -1,0 +1,104 @@
+.plato {
+  overflow: hidden;
+  border-bottom: 5px solid var(--amarillo);
+  border-radius: var(--radio);
+  background: #fff;
+}
+
+.plato__imagen {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.plato__cuerpo {
+  padding: 1rem 1.25rem 1.25rem;
+}
+
+.plato__encabezado {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.plato__encabezado h3 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.plato__precio {
+  flex: none;
+  font-family: var(--fuente-titulos);
+  font-size: 1.4rem;
+  color: var(--rojo);
+}
+
+.plato__descripcion {
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+}
+
+.plato__variantes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+}
+
+.variante {
+  padding: 0.3rem 0.9rem;
+  border: 2px solid var(--azul);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--azul);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.variante--activa {
+  background: var(--azul);
+  color: var(--crema);
+}
+
+/* Plato no disponible */
+.plato--agotado .plato__imagen,
+.plato--agotado .plato__encabezado,
+.plato--agotado .plato__descripcion,
+.plato--agotado .plato__variantes {
+  opacity: 0.5;
+  filter: grayscale(1);
+}
+
+.plato__etiqueta {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  background: var(--azul);
+  color: var(--crema);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.plato__agregar {
+  margin-top: 1rem;
+  padding: 0.55rem 1.4rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--rojo);
+  color: var(--crema);
+  font-family: var(--fuente-titulos);
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.plato__agregar:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

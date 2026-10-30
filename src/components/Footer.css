@@ -1,0 +1,22 @@
+.footer {
+  padding: 2rem 0;
+  background: var(--azul);
+  color: var(--crema);
+  text-align: center;
+}
+
+.footer p {
+  margin: 0 0 0.4rem;
+}
+
+.footer a {
+  margin-inline: 0.5rem;
+  color: var(--amarillo);
+}
+
+.footer__nombre {
+  font-family: var(--fuente-titulos);
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: var(--amarillo);
+}

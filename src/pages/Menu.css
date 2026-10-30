@@ -1,0 +1,87 @@
+.menu-titulo {
+  padding: 2rem 0 1rem;
+  text-align: center;
+}
+
+.menu-titulo h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 9vw, 4rem);
+  color: var(--rojo);
+}
+
+.menu-mensaje {
+  padding: 2rem 0 4rem;
+  text-align: center;
+}
+
+/* Barra de categorías: queda fija debajo de la navbar (que mide 64 px) */
+.menu-barra {
+  position: sticky;
+  top: 64px;
+  z-index: 40;
+  background: var(--crema);
+  border-bottom: 3px solid var(--amarillo);
+}
+
+.menu-barra__lista {
+  display: flex;
+  gap: 0.5rem;
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+  padding: 0.75rem 1rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.menu-barra__lista::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-barra__boton {
+  flex: none;
+  padding: 0.4rem 1rem;
+  border: 2px solid var(--azul);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--azul);
+  font-family: var(--fuente-titulos);
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.menu-barra__boton--activo {
+  background: var(--azul);
+  color: var(--amarillo);
+}
+
+.menu-categoria {
+  padding-top: 2rem;
+  /* navbar + barra de categorías */
+  scroll-margin-top: 125px;
+}
+
+.menu-categoria:last-child {
+  padding-bottom: 6rem;
+}
+
+.menu-categoria h2 {
+  display: inline-block;
+  margin-bottom: 1rem;
+  border-bottom: 4px solid var(--amarillo);
+  font-size: clamp(1.8rem, 6vw, 2.5rem);
+  color: var(--rojo);
+}
+
+.menu-platos {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .menu-platos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

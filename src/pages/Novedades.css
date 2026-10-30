@@ -1,0 +1,26 @@
+.novedades {
+  padding: 2rem 0 4rem;
+}
+
+.novedades h1 {
+  margin-bottom: 1.5rem;
+  font-size: clamp(2.5rem, 9vw, 4rem);
+  text-align: center;
+  color: var(--rojo);
+}
+
+.novedades__mensaje {
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.novedades__lista {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .novedades__lista {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

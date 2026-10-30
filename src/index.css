@@ -1,0 +1,90 @@
+:root {
+  --rojo: #ce3527;
+  --azul: #0a183b;
+  --amarillo: #f0b340;
+  --crema: #faf1ef;
+  --marron: #401f09;
+
+  --fuente-titulos: 'Anton', 'Impact', sans-serif;
+  --fuente-texto: 'Inter', system-ui, sans-serif;
+
+  --radio: 12px;
+  --ancho-max: 1100px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente-texto);
+  color: var(--azul);
+  background: var(--crema);
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 0.5rem;
+  font-family: var(--fuente-titulos);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.contenedor {
+  width: min(100% - 2rem, var(--ancho-max));
+  margin-inline: auto;
+}
+
+.boton {
+  display: inline-block;
+  padding: 0.85rem 1.75rem;
+  border: 3px solid transparent;
+  border-radius: 999px;
+  font-family: var(--fuente-titulos);
+  font-size: 1.2rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.boton:hover {
+  transform: translateY(-2px);
+}
+
+.boton--principal {
+  background: var(--rojo);
+  color: var(--crema);
+}
+
+.boton--secundario {
+  border-color: var(--amarillo);
+  color: var(--crema);
+}
+
+.aviso-cerrado {
+  padding: 0.6rem 1rem;
+  background: var(--amarillo);
+  color: var(--azul);
+  font-weight: 600;
+  text-align: center;
+}
+
+.boton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}

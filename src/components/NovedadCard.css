@@ -1,0 +1,51 @@
+.novedad {
+  overflow: hidden;
+  border-bottom: 5px solid var(--amarillo);
+  border-radius: var(--radio);
+  background: #fff;
+}
+
+.novedad__imagen {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.novedad__cuerpo {
+  padding: 1rem 1.25rem 1.25rem;
+}
+
+.novedad__cuerpo h3 {
+  margin: 0.5rem 0 0.4rem;
+  font-size: 1.5rem;
+}
+
+.novedad__cuerpo p {
+  margin: 0;
+  /* respeta los saltos de línea */
+  white-space: pre-line;
+}
+
+.novedad__tipo {
+  display: inline-block;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.novedad__tipo--oferta {
+  background: var(--rojo);
+  color: var(--crema);
+}
+
+.novedad__tipo--combo {
+  background: var(--amarillo);
+  color: var(--azul);
+}
+
+.novedad__tipo--plato_del_dia {
+  background: var(--azul);
+  color: var(--amarillo);
+}

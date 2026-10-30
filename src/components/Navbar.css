@@ -1,0 +1,182 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--azul);
+  color: var(--crema);
+  box-shadow: 0 3px 0 var(--amarillo);
+}
+
+.navbar__barra {
+  width: min(100% - 2rem, var(--ancho-max));
+  min-height: 64px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__logo {
+  font-family: var(--fuente-titulos);
+  font-size: 1.7rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--amarillo);
+}
+
+/* ---------- Celular: panel lateral ---------- */
+
+.navbar__boton {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0.5rem;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.navbar__boton span {
+  width: 26px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--crema);
+}
+
+.navbar__fondo {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s,
+    visibility 0s 0.3s;
+}
+
+.navbar__fondo--visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s;
+}
+
+.navbar__menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 70;
+  width: min(280px, 80vw);
+  height: 100%;
+  padding: 4.5rem 1.5rem 1.5rem;
+  background: var(--azul);
+  transform: translateX(100%);
+  visibility: hidden;
+  transition:
+    transform 0.3s ease,
+    visibility 0s 0.3s;
+}
+
+.navbar__menu--abierto {
+  transform: none;
+  visibility: visible;
+  transition: transform 0.3s ease;
+}
+
+.navbar__cerrar {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  background: none;
+  border: 0;
+  color: var(--crema);
+  font-size: 2.25rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.navbar__menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar__menu a {
+  display: block;
+  padding: 0.9rem 0.5rem;
+  border-bottom: 1px solid rgba(250, 241, 239, 0.15);
+  font-family: var(--fuente-titulos);
+  font-size: 1.4rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--crema);
+}
+
+.navbar__menu a.activo {
+  color: var(--amarillo);
+}
+
+.navbar__contador {
+  display: inline-block;
+  min-width: 1.4rem;
+  margin-left: 0.5rem;
+  padding: 0 0.4rem;
+  border-radius: 999px;
+  background: var(--rojo);
+  color: var(--crema);
+  font-family: var(--fuente-texto);
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.4rem;
+  text-align: center;
+}
+
+.navbar__menu a.activo .navbar__contador {
+  background: var(--amarillo);
+  color: var(--azul);
+}
+
+/* ---------- Computadora: barra horizontal fija ---------- */
+
+@media (min-width: 768px) {
+  .navbar__boton,
+  .navbar__cerrar,
+  .navbar__fondo {
+    display: none;
+  }
+
+  .navbar__menu {
+    position: static;
+    z-index: auto;
+    width: auto;
+    height: auto;
+    padding: 0;
+    background: none;
+    transform: none;
+    visibility: visible;
+    transition: none;
+  }
+
+  .navbar__menu ul {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .navbar__menu a {
+    padding: 0.5rem 1rem;
+    border: 0;
+    border-radius: var(--radio);
+    font-size: 1.1rem;
+  }
+
+  .navbar__menu a:hover {
+    background: rgba(250, 241, 239, 0.12);
+  }
+
+  .navbar__menu a.activo {
+    background: var(--rojo);
+    color: var(--crema);
+  }
+}
