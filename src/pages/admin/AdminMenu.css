@@ -1,0 +1,359 @@
+.admin-menu {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 960px;
+}
+
+.admin-menu .admin-tarjeta {
+  max-width: none;
+}
+
+.admin-tarjeta__ayuda {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+/* ---------- Costo de envío ---------- */
+
+.envio__actual {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+}
+
+.envio__formulario {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.envio__campo {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.envio__campo label {
+  font-weight: 700;
+}
+
+.envio__entrada {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.envio__entrada span {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.envio__ok {
+  margin: 0.75rem 0 0;
+  color: #17612a;
+  font-weight: 600;
+}
+
+/* ---------- Categorías ---------- */
+
+.categorias {
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.categoria {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(10, 24, 59, 0.15);
+}
+
+.categoria__nombre {
+  display: grid;
+}
+
+.categoria__nombre span {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.categoria__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.categoria__edicion,
+.categoria-nueva {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.categoria__edicion {
+  width: 100%;
+}
+
+.envio__entrada input,
+.categoria__edicion input,
+.categoria-nueva input {
+  padding: 0.65rem 0.9rem;
+  border: 2px solid var(--azul);
+  border-radius: var(--radio);
+  background: #fff;
+  color: var(--azul);
+  font: inherit;
+}
+
+.envio__entrada input {
+  width: 9rem;
+}
+
+.categoria__edicion input,
+.categoria-nueva input {
+  flex: 1;
+  min-width: 12rem;
+}
+
+.envio__entrada input:focus,
+.categoria__edicion input:focus,
+.categoria-nueva input:focus {
+  outline: 3px solid var(--amarillo);
+  outline-offset: 1px;
+}
+
+.admin-boton--chico {
+  min-width: 2.4rem;
+  padding: 0.35rem 0.6rem;
+}
+
+/* ---------- Platos ---------- */
+
+.plato-grupo {
+  margin-top: 1.5rem;
+}
+
+.plato-grupo__encabezado {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--amarillo);
+}
+
+.plato-grupo__encabezado h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--rojo);
+}
+
+.plato-grupo__vacio {
+  margin: 0.5rem 0 0;
+  opacity: 0.7;
+}
+
+.plato-lista {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.plato-fila {
+  display: grid;
+  grid-template-columns: 72px 1fr auto auto;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(10, 24, 59, 0.12);
+}
+
+.plato-fila__foto {
+  width: 72px;
+  aspect-ratio: 1;
+  border-radius: var(--radio);
+  background: #eee;
+  object-fit: cover;
+}
+
+.plato-fila__texto {
+  display: grid;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.plato-fila__precio {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Plato no disponible: foto y texto atenuados, los controles no */
+.plato-fila--agotado .plato-fila__foto,
+.plato-fila--agotado .plato-fila__texto {
+  opacity: 0.5;
+}
+
+.plato-fila__estado {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 9.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.plato-fila__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+/* Interruptor de disponibilidad */
+
+.interruptor {
+  position: relative;
+  flex: none;
+  width: 46px;
+  height: 26px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: #b9b9b9;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.interruptor--si {
+  background: #2e9e4f;
+}
+
+.interruptor__perilla {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.2s;
+}
+
+.interruptor--si .interruptor__perilla {
+  transform: translateX(20px);
+}
+
+.interruptor:focus-visible {
+  outline: 3px solid var(--amarillo);
+  outline-offset: 2px;
+}
+
+/* ---------- Formulario de plato ---------- */
+
+.formulario-plato {
+  margin-bottom: 1.5rem;
+  border: 2px solid var(--amarillo);
+}
+
+.formulario-plato fieldset {
+  min-width: 0;
+  margin: 0 0 1rem;
+  padding: 0;
+  border: 0;
+}
+
+.formulario-plato legend {
+  margin-bottom: 0.35rem;
+  padding: 0;
+  font-weight: 700;
+}
+
+.formulario-plato__casilla {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.formulario-plato__casilla input {
+  flex: none;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.2rem;
+  accent-color: var(--rojo);
+}
+
+.precio-entrada {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.precio-entrada span {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.precio-entrada input,
+.opcion-plato input {
+  padding: 0.6rem 0.9rem;
+  border: 2px solid var(--azul);
+  border-radius: var(--radio);
+  background: #fff;
+  color: var(--azul);
+  font: inherit;
+}
+
+.precio-entrada input:focus,
+.opcion-plato input:focus {
+  outline: 3px solid var(--amarillo);
+  outline-offset: 1px;
+}
+
+.precio-entrada input {
+  width: 9rem;
+}
+
+.opciones-plato {
+  display: grid;
+  gap: 0.5rem;
+  justify-items: start;
+}
+
+.opcion-plato {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.opcion-plato input:first-child {
+  flex: 1;
+  min-width: 10rem;
+}
+
+.opcion-plato input:nth-of-type(2) {
+  width: 8rem;
+}
+
+.formulario-plato__acciones {
+  display: flex;
+  gap: 0.75rem;
+}
+
+@media (max-width: 720px) {
+  .plato-fila {
+    grid-template-columns: 72px 1fr;
+  }
+
+  .plato-fila__estado,
+  .plato-fila__acciones {
+    grid-column: 1 / -1;
+  }
+}

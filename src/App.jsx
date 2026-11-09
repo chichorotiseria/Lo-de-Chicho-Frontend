@@ -15,6 +15,10 @@ import NoEncontrada from './pages/NoEncontrada.jsx'
 import AdminLayout from './pages/admin/AdminLayout.jsx'
 import Inicio from './pages/admin/Inicio.jsx'
 import Login from './pages/admin/Login.jsx'
+import AdminNovedades from './pages/admin/AdminNovedades.jsx'
+import AdminMenu from './pages/admin/AdminMenu.jsx'
+import AdminPedidos from './pages/admin/AdminPedido.jsx'
+import AdminEstadisticas from './pages/admin/AdminEstadisticas.jsx'
 
 function Layout() {
   return (
@@ -50,6 +54,10 @@ function App() {
             <Route path="admin" element={<RutaProtegida />}>
               <Route element={<AdminLayout />}>
                 <Route index element={<Inicio />} />
+                <Route path="pedidos" element={<AdminPedidos />} />
+                <Route path="novedades" element={<AdminNovedades />} />
+                <Route path="menu" element={<AdminMenu />} />
+                <Route path="estadisticas" element={<AdminEstadisticas />} />
               </Route>
             </Route>
           </Routes>

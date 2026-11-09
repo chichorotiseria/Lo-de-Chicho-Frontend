@@ -1,0 +1,52 @@
+.selector-foto {
+  margin-bottom: 1rem;
+}
+
+.selector-foto__titulo {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 700;
+}
+
+/* El input real queda oculto: se abre con los botones */
+.selector-foto__entrada {
+  display: none;
+}
+
+.selector-foto__vacio {
+  display: block;
+  width: 100%;
+  padding: 1.5rem;
+  border: 2px dashed var(--azul);
+  border-radius: var(--radio);
+  background: transparent;
+  color: var(--azul);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.selector-foto__vacio:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.selector-foto__vista {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.selector-foto__vista img {
+  width: 160px;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radio);
+  object-fit: cover;
+  background: #ddd;
+}
+
+.selector-foto__botones {
+  display: grid;
+  gap: 0.5rem;
+  justify-items: start;
+}

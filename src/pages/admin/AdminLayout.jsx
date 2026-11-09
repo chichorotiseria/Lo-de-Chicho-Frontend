@@ -15,6 +15,10 @@ function AdminLayout() {
             <NavLink to="/admin" end>
               Inicio
             </NavLink>
+            <NavLink to="/admin/pedidos">Pedidos</NavLink>
+            <NavLink to="/admin/novedades">Novedades</NavLink>
+            <NavLink to="/admin/menu">Menú</NavLink>
+            <NavLink to="/admin/estadisticas">Estadísticas</NavLink>
           </nav>
 
           <div className="admin__sesion">

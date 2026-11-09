@@ -1,0 +1,147 @@
+/* Botones y piezas comunes del panel */
+
+.admin-boton {
+  padding: 0.5rem 1.1rem;
+  border: 2px solid var(--azul);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--azul);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.admin-boton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.admin-boton--peligro {
+  border-color: var(--rojo);
+  color: var(--rojo);
+}
+
+.admin-boton--texto {
+  padding-inline: 0;
+  border-color: transparent;
+  text-decoration: underline;
+}
+
+.admin-encabezado {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.admin-encabezado .admin__saludo {
+  margin: 0;
+}
+
+.admin-encabezado__acciones {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* Formulario */
+
+.formulario-novedad {
+  max-width: 640px;
+  margin-bottom: 2rem;
+}
+
+.formulario-novedad__acciones {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* Lista */
+
+.lista-novedades {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item-novedad {
+  display: grid;
+  grid-template-columns: 160px 1fr auto;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1rem;
+  border-bottom: 5px solid var(--amarillo);
+  border-radius: var(--radio);
+  background: #fff;
+}
+
+.item-novedad__foto {
+  width: 160px;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radio);
+  object-fit: cover;
+}
+
+.item-novedad__foto--vacia {
+  display: grid;
+  place-items: center;
+  background: #eee;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.item-novedad__texto h3 {
+  margin: 0.4rem 0 0.25rem;
+  font-size: 1.4rem;
+}
+
+.item-novedad__texto p {
+  margin: 0;
+  white-space: pre-line;
+}
+
+.item-novedad__acciones {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.tipo {
+  display: inline-block;
+  padding: 0.15rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.tipo--oferta {
+  background: var(--rojo);
+  color: var(--crema);
+}
+
+.tipo--combo {
+  background: var(--amarillo);
+  color: var(--azul);
+}
+
+.tipo--plato_del_dia {
+  background: var(--azul);
+  color: var(--amarillo);
+}
+
+@media (max-width: 720px) {
+  .item-novedad {
+    grid-template-columns: 1fr;
+  }
+
+  .item-novedad__foto {
+    width: 100%;
+  }
+
+  .item-novedad__acciones {
+    grid-auto-flow: column;
+  }
+}

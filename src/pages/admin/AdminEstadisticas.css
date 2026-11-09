@@ -1,0 +1,173 @@
+.estadisticas__ayuda {
+  margin: 0 0 1.25rem;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+.estadisticas .admin-tarjeta {
+  max-width: none;
+}
+
+.estadisticas__contenido--cargando {
+  opacity: 0.55;
+  transition: opacity 0.2s;
+}
+
+/* ---------- Tarjetas con números grandes ---------- */
+
+.estadisticas__tarjetas {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.estadisticas__tarjeta {
+  display: grid;
+  gap: 0.25rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 5px solid var(--amarillo);
+  border-radius: var(--radio);
+  background: #fff;
+}
+
+.estadisticas__numero {
+  font-family: var(--fuente-titulos);
+  font-size: clamp(2.5rem, 6vw, 3.6rem);
+  line-height: 1;
+  color: var(--rojo);
+}
+
+/* ---------- Paneles ---------- */
+
+.estadisticas__paneles {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* ---------- Gráfico de barras ---------- */
+
+.grafico {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.4rem;
+  height: 260px;
+  padding-top: 0.5rem;
+  border-bottom: 2px solid var(--azul);
+}
+
+.grafico__columna {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 0;
+  height: 100%;
+}
+
+.grafico__valor {
+  height: 1.5rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+}
+
+.grafico__barra {
+  width: 100%;
+  max-width: 56px;
+  min-height: 3px;
+  border-radius: 6px 6px 0 0;
+  background: var(--rojo);
+}
+
+.grafico__barra--vacia {
+  background: rgba(10, 24, 59, 0.2);
+}
+
+.grafico__dia {
+  height: 1.5rem;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  white-space: nowrap;
+}
+
+.grafico--denso {
+  gap: 0.15rem;
+}
+
+.grafico--denso .grafico__valor,
+.grafico--denso .grafico__dia {
+  font-size: 0.7rem;
+}
+
+/* ---------- Ranking ---------- */
+
+.ranking {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ranking__fila {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+}
+
+.ranking__puesto {
+  flex: none;
+  width: 2rem;
+  font-family: var(--fuente-titulos);
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--rojo);
+}
+
+.ranking__contenido {
+  flex: 1;
+  min-width: 0;
+}
+
+.ranking__linea {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.ranking__nombre {
+  overflow: hidden;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ranking__unidades {
+  flex: none;
+  font-size: 0.9rem;
+}
+
+.ranking__pista {
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(10, 24, 59, 0.12);
+}
+
+.ranking__barra {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--amarillo);
+}
+
+@media (min-width: 720px) {
+  .estadisticas__tarjetas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .estadisticas__paneles {
+    grid-template-columns: 1.5fr 1fr;
+    align-items: start;
+  }
+}
