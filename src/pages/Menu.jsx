@@ -26,7 +26,7 @@ function Menu() {
 
   // Marca como activa la categoría que se está viendo
   useEffect(() => {
-    if (!menu) return
+    if (!menu || menu.categorias.length === 0) return
 
     const ultima = menu.categorias[menu.categorias.length - 1].id
     const estaAlFinal = () =>
