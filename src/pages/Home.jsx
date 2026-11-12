@@ -18,7 +18,7 @@ function Home() {
               Hacer pedido
             </Link>
             <a href={enlaceWhatsApp()} target="_blank" rel="noreferrer" className="boton boton--secundario">Escribinos por WhatsApp</a>
-            <BotonInstalar className="boton boton--secundario" />
+            <BotonInstalar />
           </div>
           <AvisoIphone />
         </div>
