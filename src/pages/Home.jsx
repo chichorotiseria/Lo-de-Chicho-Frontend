@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { LOCAL, enlaceMapa, enlaceWhatsApp } from '../config/local.js'
 import BotonInstalar from '../components/BotonInstalar.jsx'
+import AvisoIphone from '../components/AvisoIphone.jsx'
 import './Home.css'
 
 function Home() {
@@ -19,6 +20,7 @@ function Home() {
             <a href={enlaceWhatsApp()} target="_blank" rel="noreferrer" className="boton boton--secundario">Escribinos por WhatsApp</a>
             <BotonInstalar className="boton boton--secundario" />
           </div>
+          <AvisoIphone />
         </div>
       </section>
 
