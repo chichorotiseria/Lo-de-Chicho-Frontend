@@ -1,0 +1,42 @@
+.aviso-iphone {
+  position: relative;
+  max-width: 26rem;
+  margin: 1.5rem auto 0;
+  padding: 1rem 2.5rem 1rem 1.25rem;
+  border: 1px solid var(--amarillo);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  text-align: left;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.aviso-iphone__titulo {
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+  color: var(--amarillo);
+}
+
+.aviso-iphone ol {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.aviso-iphone__icono {
+  vertical-align: text-bottom;
+}
+
+.aviso-iphone__cerrar {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.5rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 0;
+  background: none;
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
