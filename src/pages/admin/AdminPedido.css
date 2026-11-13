@@ -287,3 +287,26 @@
     align-items: start;
   }
 }
+
+@media (max-width: 720px) {
+  .externo-acciones {
+    flex-wrap: wrap;
+  }
+
+  .externo-acciones > * {
+    flex: 1 1 auto;
+  }
+
+  /* Evita que el selector de fecha se salga de la tarjeta en el celular */
+  .formulario-externo input[type='datetime-local'],
+  .formulario-externo input[type='search'] {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .externo-cantidad button {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+}
