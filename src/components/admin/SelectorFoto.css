@@ -50,3 +50,20 @@
   gap: 0.5rem;
   justify-items: start;
 }
+
+@media (max-width: 720px) {
+  .selector-foto__vista {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .selector-foto__vista img {
+    width: 100%;
+  }
+
+  .selector-foto__botones {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    justify-items: stretch;
+  }
+}

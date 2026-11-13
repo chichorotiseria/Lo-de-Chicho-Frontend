@@ -144,4 +144,14 @@
   .item-novedad__acciones {
     grid-auto-flow: column;
   }
+
+  /* Los botones del encabezado ocupan su propia fila y se reparten el ancho */
+  .admin-encabezado__acciones {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .admin-encabezado__acciones > * {
+    flex: 1 1 auto;
+  }
 }
