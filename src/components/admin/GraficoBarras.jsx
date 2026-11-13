@@ -1,3 +1,5 @@
+import { useEffect, useRef } from 'react'
+
 const conDiaSemana = new Intl.DateTimeFormat('es-AR', {
   weekday: 'short',
   day: 'numeric',
@@ -16,8 +18,16 @@ function GraficoBarras({ datos }) {
   // Con muchos días se muestra solo el número, para que las etiquetas entren
   const denso = datos.length > 10
 
+  const graficoRef = useRef(null)
+
+  // Si el gráfico se desliza, arranca mostrando los días más recientes
+  useEffect(() => {
+    const grafico = graficoRef.current
+    if (grafico) grafico.scrollLeft = grafico.scrollWidth
+  }, [datos])
+
   return (
-    <div className={`grafico ${denso ? 'grafico--denso' : ''}`} role="img" aria-label="Gráfico de barras con la cantidad de pedidos de cada día">
+    <div ref={graficoRef} className={`grafico ${denso ? 'grafico--denso' : ''}`} role="img" aria-label="Gráfico de barras con la cantidad de pedidos de cada día">
       {datos.map((punto) => {
         const fecha = new Date(`${punto.dia}T00:00:00Z`)
         const proporcion = punto.pedidos / maximo

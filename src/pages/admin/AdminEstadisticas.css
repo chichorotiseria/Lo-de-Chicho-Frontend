@@ -171,3 +171,23 @@
     align-items: start;
   }
 }
+
+@media (max-width: 720px) {
+  /* Pocos días: etiquetas más chicas para que no se pisen */
+  .grafico:not(.grafico--denso) {
+    gap: 0.25rem;
+  }
+
+  .grafico:not(.grafico--denso) .grafico__dia {
+    font-size: 0.7rem;
+  }
+
+  /* Muchos días: el gráfico se desliza en horizontal en vez de apretar las etiquetas */
+  .grafico--denso {
+    overflow-x: auto;
+  }
+
+  .grafico--denso .grafico__columna {
+    flex: 0 0 1.6rem;
+  }
+}
