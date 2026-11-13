@@ -103,7 +103,8 @@
 }
 
 .navbar__menu a {
-  display: block;
+  display: flex;
+  align-items: center;
   padding: 0.9rem 0.5rem;
   border-bottom: 1px solid rgba(250, 241, 239, 0.15);
   font-family: var(--fuente-titulos);
@@ -131,6 +132,8 @@
   font-weight: 700;
   line-height: 1.4rem;
   text-align: center;
+  position: relative;
+  top: 1px;
 }
 
 .navbar__menu a.activo .navbar__contador {
