@@ -187,3 +187,57 @@
   background: #f9d9d5;
   color: #8f2217;
 }
+
+/* ---------- Panel en celular ---------- */
+
+@media (max-width: 720px) {
+  .admin__barra-contenido {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      'titulo sesion'
+      'nav nav';
+    align-items: center;
+    gap: 0.25rem 0.75rem;
+    min-height: 0;
+    padding-block: 0.5rem;
+  }
+
+  .admin__titulo {
+    grid-area: titulo;
+    font-size: 1.15rem;
+    line-height: 1.2;
+  }
+
+  .admin__sesion {
+    grid-area: sesion;
+    gap: 0.25rem;
+    margin-left: 0;
+    font-size: 0.85rem;
+  }
+
+  .admin__sesion span {
+    display: none;
+  }
+
+  .admin__sesion a,
+  .admin__sesion button {
+    padding: 0.45rem 0.6rem;
+  }
+
+  .admin__nav {
+    grid-area: nav;
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+  }
+
+  .admin__nav a {
+    flex: none;
+    padding: 0.55rem 0.9rem;
+    white-space: nowrap;
+  }
+
+  .admin__contenido {
+    padding: 1.25rem 0 3rem;
+  }
+}
