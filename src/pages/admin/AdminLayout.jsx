@@ -1,19 +1,9 @@
-import { useEffect, useRef } from 'react'
-import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
+import { Link, NavLink, Outlet } from 'react-router-dom'
+import { useAuth } from '../../context/AuthContext.jsx'
 import './Admin.css'
 
 function AdminLayout() {
   const { usuario, cerrarSesion } = useAuth()
-
-  const navRef = useRef(null)
-  const { pathname } = useLocation()
-
-  // En el celular la barra de secciones se desliza: deja visible la activa
-  useEffect(() => {
-    navRef.current
-      ?.querySelector('a.active')
-      ?.scrollIntoView({ block: 'nearest', inline: 'center' })
-  }, [pathname])
 
   return (
     <div className="admin">
@@ -21,7 +11,7 @@ function AdminLayout() {
         <div className="admin__barra-contenido">
           <strong className="admin__titulo">Panel · Lo de Chicho</strong>
 
-          <nav className="admin__nav" aria-label="Secciones del panel" ref={navRef}>
+          <nav className="admin__nav" aria-label="Secciones del panel">
             <NavLink to="/admin" end>
               Inicio
             </NavLink>
