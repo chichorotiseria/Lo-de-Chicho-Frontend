@@ -358,4 +358,15 @@
   .plato-fila__acciones {
     grid-column: 1 / -1;
   }
+
+  .admin-boton--chico {
+    min-height: 2.5rem;
+  }
+
+  /* Amplía la zona táctil del interruptor sin cambiar cómo se ve */
+  .interruptor::after {
+    content: '';
+    position: absolute;
+    inset: -9px -4px;
+  }
 }

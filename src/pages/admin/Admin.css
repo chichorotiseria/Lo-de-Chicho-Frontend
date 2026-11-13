@@ -240,4 +240,12 @@
   .admin__contenido {
     padding: 1.25rem 0 3rem;
   }
+
+    .admin-tarjeta {
+    padding: 1rem;
+  }
+
+  .admin-tarjeta h2 {
+    font-size: 1.4rem;
+  }
 }
