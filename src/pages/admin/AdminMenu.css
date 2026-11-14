@@ -258,6 +258,7 @@
 .formulario-plato {
   margin-bottom: 1.5rem;
   border: 2px solid var(--amarillo);
+  scroll-margin-top: 1rem;
 }
 
 .formulario-plato fieldset {
