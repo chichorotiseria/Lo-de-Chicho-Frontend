@@ -153,7 +153,9 @@
 }
 
 .admin-tarjeta {
+  width: 100%;
   max-width: 520px;
+  margin-inline: auto;
   padding: 1.5rem;
   border-bottom: 5px solid var(--amarillo);
   border-radius: var(--radio);
