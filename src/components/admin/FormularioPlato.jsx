@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useAuth } from '../../context/AuthContext.jsx'
 import { descartarSubida } from './descartarSubida.js'
 import SelectorFoto from './SelectorFoto.jsx'
@@ -28,6 +28,17 @@ function FormularioPlato({
   alCancelar,
 }) {
   const { pedir } = useAuth()
+
+  const formularioRef = useRef(null)
+
+  // Al abrirse, lleva la pantalla hasta el formulario
+  useEffect(() => {
+    const sinAnimacion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    formularioRef.current?.scrollIntoView({
+      behavior: sinAnimacion ? 'auto' : 'smooth',
+      block: 'start',
+    })
+  }, [])
 
   const idGuardado = inicial?.imagen_id ?? null
 
@@ -140,7 +151,7 @@ function FormularioPlato({
   }
 
   return (
-    <form className="admin-tarjeta formulario-plato" onSubmit={enviar} noValidate>
+    <form ref={formularioRef} className="admin-tarjeta formulario-plato" onSubmit={enviar} noValidate>
       <h2>{inicial ? 'Editar plato' : 'Nuevo plato'}</h2>
 
       <div className="admin-campo">
