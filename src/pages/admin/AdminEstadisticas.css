@@ -173,6 +173,12 @@
 }
 
 @media (max-width: 720px) {
+  /* Deja que las tarjetas se achiquen al ancho de la pantalla:
+     sin esto, el gráfico las estira y se desliza toda la página */
+  .estadisticas__paneles > * {
+    min-width: 0;
+  }
+
   /* Pocos días: etiquetas más chicas para que no se pisen */
   .grafico:not(.grafico--denso) {
     gap: 0.25rem;
